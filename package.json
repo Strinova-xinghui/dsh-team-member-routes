@@ -1,0 +1,56 @@
+{
+  "name": "dsh-team-member-routes",
+  "version": "0.3.1",
+  "description": "Agent Teams extension: spawn_teammate_route creates a teammate with its own provider/model/reasoning_effort; set_teammate_model lets the Lead re-route a stopped teammate; and the teammate dialog now shows the official model + reasoning-effort pickers (restart-safe).",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "agent-teams",
+    "subagent",
+    "model-routing"
+  ],
+  "license": "MIT",
+  "author": "Strinova-xinghui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Strinova-xinghui/dsh-team-member-routes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Strinova-xinghui/dsh-team-member-routes/issues"
+  },
+  "homepage": "https://github.com/Strinova-xinghui/dsh-team-member-routes#readme",
+  "scripts": {
+    "test": "node test/selftest.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web"
+    },
+    "engines": {
+      "dsh": ">=0.1.1-rc.1"
+    }
+  }
+}
